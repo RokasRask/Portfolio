@@ -1,0 +1,55 @@
+/* App.css */
+body {
+    padding-top: 56px; /* Adjust for fixed navbar */
+    font-family: 'Arial', sans-serif;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: bold;
+  }
+  
+  section {
+    padding: 60px 0;
+  }
+  
+  .card {
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .btn-primary {
+    background-color: #4b6cb7;
+    border-color: #4b6cb7;
+  }
+  
+  .btn-primary:hover {
+    background-color: #3a568f;
+    border-color: #3a568f;
+  }
+
+  @media (max-width: 768px) {
+    .navbar-brand {
+      font-size: 1.2rem;
+    }
+  
+    .navbar-nav {
+      text-align: center;
+    }
+  
+    .navbar-nav .nav-link {
+      padding: 0.5rem 1rem;
+    }
+  
+    .navbar-toggler {
+      margin-right: 1rem;
+    }
+  
+    .btn-outline-light {
+      margin: 0.5rem 0;
+    }
+  }
+  
