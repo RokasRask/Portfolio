@@ -6,13 +6,13 @@ const Skills = ({ language }) => {
   // Define skills with proficiency percentages from CV
   const technicalSkills = [
     { name: 'HTML5', level: 100 },
-    { name: 'JavaScript', level: 100 },
-    { name: 'HTML & CSS', level: 80 },
+    { name: 'JavaScript', level: 80 },
+    { name: 'HTML & CSS', level: 90 },
     { name: 'React', level: 80 },
-    { name: 'Git', level: 100 },
+    { name: 'Git', level: 95 },
     { name: 'Node.js', level: 100 },
-    { name: 'SQL', level: 60 },
-    { name: 'MySQL', level: 60 },
+    { name: 'SQL', level: 70 },
+    { name: 'MySQL', level: 70 },
   ];
 
   const softSkills = [
