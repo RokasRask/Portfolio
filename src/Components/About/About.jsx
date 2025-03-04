@@ -4,6 +4,9 @@ import './About.scss';
 import profilePhoto from '../../Assets/Photo.png';
 
 const About = ({ language }) => {
+  // Dinamiškai parenkamas CV failas pagal pasirinktą kalbą
+  const cvFileName = language === 'lt' ? 'rokas-raskevicius-cv-lt.pdf' : 'rokas-raskevicius-cv-en.pdf';
+  
   return (
     <section id="about" className="about section">
       <div className="container">
@@ -62,7 +65,7 @@ const About = ({ language }) => {
           <div className="about__text animate-on-scroll">
             <p className="about__description">
               {language === 'lt' 
-                ? 'Esu dinamiškas IT technikas su dvejų metų praktinės patirties, puikiai išmanantis techninę pagalbą ir sistemų priežiūrą. Gebu spręsti sudėtingas problemas ir greitai adaptuotis prie besikeičiančių technologijų. Siekiu panaudoti savo įgūdžius kurdamas inovatyvius sprendimus kaip Full Stack Web programuotojas. Nuolat mokausi ir esu įsipareigojęs teikti aukštos kokybės rezultatus greitai besikeičiančioje aplinkoje.'
+                ? 'Esu dinamiškas IT technikas su dvejų metų praktine patirtimi, puikiai išmanantis techninę pagalbą ir sistemų priežiūrą. Kvalifikuotas sprendžiant sudėtingas problemas, demonstruojantis gebėjimą prisitaikyti prie besikeičiančių technologijų. Siekiu panaudoti savo įgūdžius interneto svetainių kūrime, kurdamas inovatyvius sprendimus kaip Full Stack programuotojas. Įsipareigojęs nuolat mokytis ir teikti aukštos kokybės rezultatus greitai besikeičiančioje aplinkoje.'
                 : 'Dynamic IT technician with two years of hands-on experience, excelling in technical support and system maintenance. Proficient in troubleshooting and resolving complex issues, demonstrating a strong ability to adapt to evolving technologies. Eager to leverage skills in web development to create innovative solutions as a Full Stack Web Developer. Committed to continuous learning and delivering high-quality results in fast-paced environments.'}
             </p>
             
@@ -119,7 +122,6 @@ const About = ({ language }) => {
                   >
                     Rokas Raškevičius
                   </a>
-                  
                 </span>
               </div>
             </div>
@@ -129,7 +131,7 @@ const About = ({ language }) => {
                 {language === 'lt' ? 'Susisiekti' : 'Contact Me'}
               </a>
               <a 
-                href="/assets/cv/rokas-raskevicius-cv.pdf" 
+                href={`/assets/cv/${cvFileName}`} 
                 className="btn btn-outline"
                 target="_blank" 
                 rel="noopener noreferrer"
