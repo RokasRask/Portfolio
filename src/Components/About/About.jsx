@@ -2,12 +2,11 @@ import React from 'react';
 import { getText } from '../../Utils/i18n';
 import './About.scss';
 import profilePhoto from '../../Assets/Photo.png';
-// Import CV files from Assets/cv folder
+
 import cvEN from '../../Assets/cv/rokas-raskevicius-cv-en.pdf';
 import cvLT from '../../Assets/cv/rokas-raskevicius-cv-lt.pdf';
 
 const About = ({ language }) => {
-  // Use the imported CV files instead of the hardcoded path
   const cvFile = language === 'lt' ? cvLT : cvEN;
   
   return (
