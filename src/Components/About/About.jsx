@@ -4,8 +4,16 @@ import './About.scss';
 import profilePhoto from '../../Assets/Photo.png';
 
 const About = ({ language }) => {
-  // Dinamiškai parenkamas CV failas pagal pasirinktą kalbą
   const cvFileName = language === 'lt' ? 'rokas-raskevicius-cv-lt.pdf' : 'rokas-raskevicius-cv-en.pdf';
+  
+  const getBasePath = () => {
+    if (process.env.PUBLIC_URL) {
+      return process.env.PUBLIC_URL;
+    }
+    
+    const pathSegments = window.location.pathname.split('/');
+    return pathSegments.length > 1 && pathSegments[1] !== '' ? `/${pathSegments[1]}` : '';
+  };
   
   return (
     <section id="about" className="about section">
@@ -65,8 +73,8 @@ const About = ({ language }) => {
           <div className="about__text animate-on-scroll">
             <p className="about__description">
               {language === 'lt' 
-                ? 'Esu dinamiškas IT technikas su dvejų metų praktine patirtimi, puikiai išmanantis techninę pagalbą ir sistemų priežiūrą. Kvalifikuotas sprendžiant sudėtingas problemas, demonstruojantis gebėjimą prisitaikyti prie besikeičiančių technologijų. Siekiu panaudoti savo įgūdžius interneto svetainių kūrime, kurdamas inovatyvius sprendimus kaip Full Stack programuotojas. Įsipareigojęs nuolat mokytis ir teikti aukštos kokybės rezultatus greitai besikeičiančioje aplinkoje.'
-                : 'Dynamic IT technician with two years of hands-on experience, excelling in technical support and system maintenance. Proficient in troubleshooting and resolving complex issues, demonstrating a strong ability to adapt to evolving technologies. Eager to leverage skills in web development to create innovative solutions as a Full Stack Web Developer. Committed to continuous learning and delivering high-quality results in fast-paced environments.'}
+                ? 'Sveiki! Aš esu Rokas Raškevičius, entuziastingas programuotojas, besimokantis HTML, CSS, JavaScript ir React. Mėgstu kurti projektus ir spręsti problemas. Studijavau Marijampolės kolegijoje Informacines technologijas ir kibernetinę saugą, studijuodamas dirbau kompiuterių taisykloje. Diplomą apsigyniau 2024 m. vasarą, o rudenį pradėjau labiau gilintis į tinklalapių kūrimą fullstack. Šiuo metu ieškau darbo svetainių kūrimo srityje.'
+                : "Hello! I'm Rokas Raškevičius, a passionate developer learning HTML, CSS, JavaScript, and React. I love building projects and solving problems. I studied Information Technologies and Cybersecurity at Marijampolė College. While studying, I worked at a computer repair shop. I defended my diploma in the summer of 2024, and in the fall, I began delving deeper into full-stack web development. Currently, I am seeking a job in the field of web development."}
             </p>
             
             <div className="about__details">
@@ -131,7 +139,7 @@ const About = ({ language }) => {
                 {language === 'lt' ? 'Susisiekti' : 'Contact Me'}
               </a>
               <a 
-                href={`/assets/cv/${cvFileName}`} 
+                href={`${getBasePath()}/assets/cv/${cvFileName}`}
                 className="btn btn-outline"
                 target="_blank" 
                 rel="noopener noreferrer"
