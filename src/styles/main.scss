@@ -1,0 +1,108 @@
+// Import Google Fonts
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap');
+
+// Import core styles
+@import 'reset';
+@import 'variables';
+@import 'mixins';
+@import 'animations';
+
+// Import component styles
+@import '../Components/Header/Header';
+@import '../Components/About/About';
+@import '../Components/Skills/Skills';
+@import '../Components/Experience/Experience';
+@import '../Components/Education/Education';
+@import '../Components/Projects/Projects';
+@import '../Components/Contact/Contact';
+@import '../Components/Footer/Footer';
+
+// Global styles
+html {
+  scroll-padding-top: 80px; // For fixed header, adjust based on header height
+}
+
+body {
+  @include body-text;
+  color: $text-color;
+  background-color: #fcfcfc;
+}
+
+.container {
+  @include container;
+}
+
+.section {
+  @include section-padding;
+  
+  &__title {
+    @include heading-2;
+    text-align: center;
+    margin-bottom: $spacing-xl;
+    position: relative;
+    
+    &::after {
+      content: '';
+      display: block;
+      width: 80px;
+      height: 4px;
+      background: linear-gradient(90deg, $primary-color, $accent-color);
+      margin: $spacing-sm auto 0;
+      border-radius: $border-radius-sm;
+    }
+  }
+}
+
+.button {
+  @include button;
+  
+  &--secondary {
+    @include button($secondary-color);
+  }
+  
+  &--outline {
+    @include button(transparent, $primary-color);
+    border: 2px solid $primary-color;
+    
+    &:hover {
+      background-color: $primary-color;
+      color: $light-text;
+    }
+  }
+}
+
+// Utility classes
+.text-center {
+  text-align: center;
+}
+
+.mt-1 { margin-top: $spacing-sm; }
+.mt-2 { margin-top: $spacing-md; }
+.mt-3 { margin-top: $spacing-lg; }
+.mt-4 { margin-top: $spacing-xl; }
+
+.mb-1 { margin-bottom: $spacing-sm; }
+.mb-2 { margin-bottom: $spacing-md; }
+.mb-3 { margin-bottom: $spacing-lg; }
+.mb-4 { margin-bottom: $spacing-xl; }
+
+.hidden {
+  display: none;
+}
+
+// Animated section elements
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  
+  &.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Language transition
+.language-transition {
+  transition: all 0.5s ease;
+}

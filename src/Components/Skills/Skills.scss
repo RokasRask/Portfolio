@@ -1,0 +1,168 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.skills {
+  background-color: $light-bg;
+  position: relative;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+      radial-gradient(circle at 20% 30%, rgba($primary-color, 0.05) 0%, transparent 200px),
+      radial-gradient(circle at 80% 70%, rgba($accent-color, 0.05) 0%, transparent 200px);
+    pointer-events: none;
+  }
+  
+  &__intro {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto $spacing-xl;
+    font-size: $font-size-lg;
+  }
+  
+  &__content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $spacing-xl;
+    margin-bottom: $spacing-xl;
+    
+    @include respond-to(md) {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  
+  &__column {
+    background-color: white;
+    padding: $spacing-lg;
+    border-radius: $border-radius-md;
+    box-shadow: $shadow-sm;
+    transition: all $transition-base;
+    
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: $shadow-md;
+    }
+  }
+  
+  &__subtitle {
+    font-size: $font-size-xl;
+    color: $secondary-color;
+    margin-bottom: $spacing-lg;
+    position: relative;
+    padding-bottom: $spacing-sm;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 50px;
+      height: 3px;
+      background: linear-gradient(90deg, $primary-color, $accent-color);
+      border-radius: $border-radius-sm;
+    }
+  }
+  
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-md;
+  }
+  
+  &__tools {
+    background-color: white;
+    padding: $spacing-lg;
+    border-radius: $border-radius-md;
+    box-shadow: $shadow-sm;
+  }
+  
+  &__tools-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: $spacing-md;
+    margin-top: $spacing-lg;
+  }
+  
+  &__tool-item {
+    background: linear-gradient(135deg, rgba($primary-color, 0.1), rgba($accent-color, 0.1));
+    padding: $spacing-md;
+    border-radius: $border-radius-sm;
+    text-align: center;
+    font-weight: 500;
+    transition: all $transition-base;
+    
+    &:hover {
+      transform: translateY(-3px);
+      box-shadow: $shadow-sm;
+      background: linear-gradient(135deg, rgba($primary-color, 0.2), rgba($accent-color, 0.2));
+    }
+  }
+}
+
+// Skill item styling
+.skill-item {
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: $spacing-xs;
+  }
+  
+  &__name {
+    font-weight: 500;
+  }
+  
+  &__percentage {
+    font-weight: 700;
+    color: $primary-color;
+  }
+  
+  &__bar {
+    height: 10px;
+    background-color: rgba($text-color, 0.1);
+    border-radius: $border-radius-sm;
+    overflow: hidden;
+  }
+  
+  &__progress {
+    height: 100%;
+    background: linear-gradient(90deg, $primary-color, $accent-color);
+    border-radius: $border-radius-sm;
+    position: relative;
+    transition: width 1.5s ease-in-out;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0.15) 0%,
+        rgba(255, 255, 255, 0) 50%,
+        rgba(255, 255, 255, 0.15) 100%
+      );
+      background-size: 200% 100%;
+      animation: shimmer 2s infinite;
+    }
+    
+    &--soft {
+      background: linear-gradient(90deg, $secondary-color, darken($accent-color, 15%));
+    }
+  }
+}
+
+@keyframes shimmer {
+  from {
+    background-position: 100% 0;
+  }
+  to {
+    background-position: 0 0;
+  }
+}
