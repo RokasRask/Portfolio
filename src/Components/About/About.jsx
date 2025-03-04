@@ -61,11 +61,19 @@ const About = ({ language }) => {
           
           <div className="about__text animate-on-scroll">
             <p className="about__description">
-              {getText(language, 'aboutText')}
+              {language === 'lt' 
+                ? 'Esu dinamiškas IT technikas su dvejų metų praktinės patirties, puikiai išmanantis techninę pagalbą ir sistemų priežiūrą. Gebu spręsti sudėtingas problemas ir greitai adaptuotis prie besikeičiančių technologijų. Siekiu panaudoti savo įgūdžius kurdamas inovatyvius sprendimus kaip Full Stack Web programuotojas. Nuolat mokausi ir esu įsipareigojęs teikti aukštos kokybės rezultatus greitai besikeičiančioje aplinkoje.'
+                : 'Dynamic IT technician with two years of hands-on experience, excelling in technical support and system maintenance. Proficient in troubleshooting and resolving complex issues, demonstrating a strong ability to adapt to evolving technologies. Eager to leverage skills in web development to create innovative solutions as a Full Stack Web Developer. Committed to continuous learning and delivering high-quality results in fast-paced environments.'}
             </p>
             
             <div className="about__details">
               <div className="about__detail-item">
+                <span className="about__detail-label">
+                  {language === 'lt' ? 'Miestas:' : 'Location:'}
+                </span>
+                <span className="about__detail-value">
+                  {language === 'lt' ? 'Vilnius, Lietuva' : 'Vilnius, Lithuania'}
+                </span>
               </div>
               
               <div className="about__detail-item">
@@ -84,6 +92,17 @@ const About = ({ language }) => {
                 <span className="about__detail-value">
                   <a href="mailto:rokas.raskevic@gmail.com">
                     rokas.raskevic@gmail.com
+                  </a>
+                </span>
+              </div>
+              
+              <div className="about__detail-item">
+                <span className="about__detail-label">
+                  {language === 'lt' ? 'Telefonas:' : 'Phone:'}
+                </span>
+                <span className="about__detail-value">
+                  <a href="tel:+37060185553">
+                    +370 601 85553
                   </a>
                 </span>
               </div>

@@ -10,7 +10,7 @@ export const languages = {
     
     // About section
     aboutMe: "About Me",
-    aboutText: "Hello! I'm Rokas Raškevičius, a passionate full-stack developer working with HTML, CSS, JavaScript, React, and back-end technologies. I love building comprehensive web solutions and solving complex problems. I studied Information Technologies and Cybersecurity at Marijampolė College. While studying, I worked at a computer repair shop. I defended my diploma in the summer of 2024, and in the fall, I began delving deeper into full-stack web development. Currently, I am seeking a job in the field of web development.",
+    aboutText: "Dynamic IT technician with two years of hands-on experience, excelling in technical support and system maintenance. Proficient in troubleshooting and resolving complex issues, demonstrating a strong ability to adapt to evolving technologies. Eager to leverage skills in web development to create innovative solutions as a Full Stack Web Developer. Committed to continuous learning and delivering high-quality results in fast-paced environments.",
     downloadCV: "Download CV",
     
     // Skills section
@@ -20,17 +20,17 @@ export const languages = {
     // Experience section
     experienceTitle: "Work Experience",
     experienceIntro: "My professional journey so far:",
-    jobTitle: "Computer Technician",
-    jobPeriod: "2021 - 2024",
-    jobCompany: "Computer Repair Shop",
-    jobDescription: "Diagnosed and repaired hardware and software issues. Provided technical support and customer service.",
+    jobTitle: "IT technician",
+    jobPeriod: "07/2022—03/2024",
+    jobCompany: "UAB \"IT HELPAS\"",
+    jobDescription: "Installed and configured hardware, monitored systems, and resolved technical issues.",
     
     // Education section
     educationTitle: "Education",
-    educationDegree: "Bachelor's Degree in Information Technologies and Cybersecurity",
-    educationPeriod: "2020 - 2024",
-    educationInstitution: "Marijampolė College",
-    educationDescription: "Studied various aspects of IT including programming, networking, and cybersecurity. Defended my diploma in summer 2024.",
+    educationDegree: "Professional bachelor's degree of Information Systems Technology and Cybersecurity",
+    educationPeriod: "09/2020—05/2024",
+    educationInstitution: "Marijampolės kolegija",
+    educationDescription: "Information Systems Technology and Cybersecurity at Marijampolė College. Studied various aspects of IT including programming, networking, and cybersecurity. Defended my diploma in summer 2024.",
     
     // Projects section
     projectsTitle: "Projects",
@@ -61,7 +61,7 @@ export const languages = {
     
     // About section
     aboutMe: "Apie Mane",
-    aboutText: "Sveiki! Aš esu Rokas Raškevičius, entuziastingas full-stack programuotojas, dirbantis su HTML, CSS, JavaScript, React ir serverinėmis technologijomis. Mėgstu kurti visapusiškus internetinius sprendimus ir spręsti sudėtingas problemas. Studijavau Marijampolės kolegijoje Informacines technologijas ir kibernetinę saugą, studijuodamas dirbau kompiuterių taisykloje. Diplomą apsigyniau 2024 m. vasarą, o rudenį pradėjau labiau gilintis į tinklalapių kūrimą fullstack. Šiuo metu ieškau darbo svetainių kūrimo srityje.",
+    aboutText: "Esu dinamiškas IT technikas su dvejų metų praktinės patirties, puikiai išmanantis techninę pagalbą ir sistemų priežiūrą. Gebu spręsti sudėtingas problemas ir greitai adaptuotis prie besikeičiančių technologijų. Siekiu panaudoti savo įgūdžius kurdamas inovatyvius sprendimus kaip Full Stack Web programuotojas. Nuolat mokausi ir esu įsipareigojęs teikti aukštos kokybės rezultatus greitai besikeičiančioje aplinkoje.",
     downloadCV: "Atsisiųsti CV",
     
     // Skills section
@@ -71,17 +71,17 @@ export const languages = {
     // Experience section
     experienceTitle: "Darbo Patirtis",
     experienceIntro: "Mano profesinė kelionė iki šiol:",
-    jobTitle: "Kompiuterių technikas",
-    jobPeriod: "2021 - 2024",
-    jobCompany: "Kompiuterių taisykla",
-    jobDescription: "Atlikau diagnostiką ir taisiau aparatinės ir programinės įrangos problemas. Teikiau techninę pagalbą ir klientų aptarnavimą.",
+    jobTitle: "IT technikas",
+    jobPeriod: "07/2022—03/2024",
+    jobCompany: "UAB \"IT HELPAS\"",
+    jobDescription: "Diegiau ir konfigūravau techninę įrangą, stebėjau sistemas ir sprendžiau technines problemas.",
     
     // Education section
     educationTitle: "Išsilavinimas",
-    educationDegree: "Bakalauro laipsnis Informacinių technologijų ir kibernetinio saugumo srityje",
-    educationPeriod: "2020 - 2024",
+    educationDegree: "Profesinis bakalauro laipsnis Informacinių sistemų technologijos ir kibernetinio saugumo srityje",
+    educationPeriod: "09/2020—05/2024",
     educationInstitution: "Marijampolės kolegija",
-    educationDescription: "Studijavau įvairius IT aspektus, įskaitant programavimą, tinklus ir kibernetinį saugumą. Diplomą apsigyniau 2024 m. vasarą.",
+    educationDescription: "Informacinių sistemų technologija ir kibernetinis saugumas Marijampolės kolegijoje. Studijavau įvairius IT aspektus, įskaitant programavimą, tinklus ir kibernetinį saugumą. Diplomą apsigyniau 2024 m. vasarą.",
     
     // Projects section
     projectsTitle: "Projektai",

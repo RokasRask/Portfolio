@@ -3,14 +3,18 @@ import { getText } from '../../Utils/i18n';
 import './Education.scss';
 
 const Education = ({ language }) => {
-  // Add education history
+  // Add education history based on CV
   const educationHistory = [
     {
-      degree: getText(language, 'educationDegree'),
-      institution: getText(language, 'educationInstitution'),
-      period: getText(language, 'educationPeriod'),
-      description: getText(language, 'educationDescription'),
-      diplomaLink: "/assets/diploma/rokas-raskevicius-diploma.pdf",
+      degree: language === 'lt' 
+        ? 'Profesinis bakalauro laipsnis Informacinių sistemų technologijos ir kibernetinio saugumo srityje' 
+        : 'Professional bachelor\'s degree of Information Systems Technology and Cybersecurity',
+      institution: language === 'lt' ? 'Marijampolės kolegija' : 'Marijampolės kolegija',
+      location: language === 'lt' ? 'Marijampolė' : 'Marijampolė',
+      period: '09/2020—05/2024',
+      description: language === 'lt'
+        ? 'Informacinių sistemų technologija ir kibernetinis saugumas Marijampolės kolegijoje. Studijavau įvairius IT aspektus, įskaitant programavimą, tinklus ir kibernetinį saugumą. Diplomą apsigyniau 2024 m. vasarą.'
+        : 'Information Systems Technology and Cybersecurity at Marijampolė College. Studied various aspects of IT including programming, networking, and cybersecurity. Defended my diploma in summer 2024.',
       skills: [
         language === 'lt' ? 'Programavimas' : 'Programming',
         language === 'lt' ? 'Duomenų bazių valdymas' : 'Database Management',
@@ -19,19 +23,21 @@ const Education = ({ language }) => {
         language === 'lt' ? 'Sistemų analizė' : 'Systems Analysis',
       ]
     },
-    // Add more education entries as needed
   ];
 
-  // Add courses and certificates
+  // Add courses and certificates based on CV
   const certificates = [
     {
-      title: 'Web Development Course',
-      organization: 'Baltic Institute of Technology (BIT)',
+      title: language === 'lt' ? 'Web programuotojo studijos' : 'Web developer studies',
+      organization: language === 'lt' ? 'Baltic Institute of Technology' : 'Baltic Institute of Technology',
+      location: language === 'lt' ? 'Kaunas' : 'Kaunas',
       year: '2024-2025',
-      period: '2024-09-30 — 2025-03-07',
+      period: '09/2024—03/2025',
+      description: language === 'lt'
+        ? 'Studijavau full-stack web kūrimą, HTML, CSS, JavaScript, React.'
+        : 'Studied full-stack web development, HTML, CSS, JavaScript, React.',
       link: 'https://bit.lt'
     }
-    // Add more certificates as needed
   ];
 
   return (
@@ -54,10 +60,8 @@ const Education = ({ language }) => {
                   <div className="education__period">{edu.period}</div>
                 </div>
                 
-                <div className="education__institution">{edu.institution}</div>
+                <div className="education__institution">{edu.institution}, {edu.location}</div>
                 <p className="education__description">{edu.description}</p>
-                
-                
                 
                 <div className="education__skills">
                   <h5 className="education__skills-title">
@@ -75,7 +79,7 @@ const Education = ({ language }) => {
           
           <div className="education__certificates animate-on-scroll">
             <h3 className="education__subtitle">
-              {language === 'lt' ? 'Kursai ir sertifikatai' : 'Courses & Certificates'}
+              {language === 'lt' ? 'Papildomi kursai' : 'Additional Courses'}
             </h3>
             
             <div className="education__certificates-list">
@@ -90,6 +94,11 @@ const Education = ({ language }) => {
                     <div className="education__certificate-period">
                       {cert.period}
                     </div>
+                  )}
+                  {cert.description && (
+                    <p className="education__certificate-description">
+                      {cert.description}
+                    </p>
                   )}
                   <a href={cert.link} className="education__certificate-link" target="_blank" rel="noopener noreferrer">
                     {language === 'lt' ? 'Peržiūrėti' : 'View'}

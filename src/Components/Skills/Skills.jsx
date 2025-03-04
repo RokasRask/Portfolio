@@ -3,33 +3,36 @@ import { getText } from '../../Utils/i18n';
 import './Skills.scss';
 
 const Skills = ({ language }) => {
-  // Define skills with proficiency percentages
+  // Define skills with proficiency percentages from CV
   const technicalSkills = [
-    { name: 'HTML', level: 85 },
-    { name: 'CSS/SCSS', level: 80 },
-    { name: 'JavaScript', level: 75 },
-    { name: 'React', level: 70 },
-    { name: 'Git', level: 65 },
-    { name: 'Responsive Design', level: 85 },
+    { name: 'HTML5', level: 100 },
+    { name: 'JavaScript', level: 100 },
+    { name: 'HTML & CSS', level: 80 },
+    { name: 'React', level: 80 },
+    { name: 'Git', level: 100 },
+    { name: 'Node.js', level: 100 },
+    { name: 'SQL', level: 60 },
+    { name: 'MySQL', level: 60 },
   ];
 
   const softSkills = [
-    { name: language === 'lt' ? 'Komunikacija' : 'Communication', level: 90 },
-    { name: language === 'lt' ? 'Problemų sprendimas' : 'Problem Solving', level: 85 },
-    { name: language === 'lt' ? 'Komandinis darbas' : 'Teamwork', level: 90 },
-    { name: language === 'lt' ? 'Adaptabilumas' : 'Adaptability', level: 80 },
-    { name: language === 'lt' ? 'Laiko valdymas' : 'Time Management', level: 75 },
+    { name: language === 'lt' ? 'Problemų sprendimas' : 'Problem Solving', level: 90 },
+    { name: language === 'lt' ? 'Komandinis darbas' : 'Teamwork', level: 85 },
+    { name: language === 'lt' ? 'Techninė pagalba' : 'Technical Support', level: 95 },
+    { name: language === 'lt' ? 'Adaptabilumas' : 'Adaptability', level: 90 },
+    { name: language === 'lt' ? 'Komunikacija' : 'Communication', level: 85 },
   ];
 
   // Tools and technologies I'm familiar with
   const tools = [
-    'VS Code',
+    'Visual Studio Code',
     'GitHub',
     'npm',
     'Webpack',
-    'Bootstrap',
-    'Figma',
-    'Photoshop',
+    'Terminal',
+    'REST API',
+    'JSON',
+    'Express.js',
   ];
 
   return (

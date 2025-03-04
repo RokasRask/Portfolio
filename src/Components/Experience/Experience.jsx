@@ -3,29 +3,25 @@ import { getText } from '../../Utils/i18n';
 import './Experience.scss';
 
 const Experience = ({ language }) => {
-  // You can add more experience entries as needed
+  // Darbo patirtis iš CV
   const experiences = [
     {
-      title: getText(language, 'jobTitle'),
-      company: getText(language, 'jobCompany'),
-      period: getText(language, 'jobPeriod'),
-      description: getText(language, 'jobDescription'),
+      title: language === 'lt' ? 'IT technikas' : 'IT technician',
+      company: 'UAB "IT HELPAS"',
+      location: language === 'lt' ? 'Marijampolė' : 'Marijampolė',
+      period: '07/2022—03/2024',
       responsibilities: [
         language === 'lt' 
-          ? 'Kompiuterių aparatinės ir programinės įrangos gedimų nustatymas ir taisymas'
-          : 'Diagnosis and repair of computer hardware and software issues',
+          ? 'Naujų techninių komponentų diegimas ir konfigūravimas (spausdintuvai, skaitytuvai, maršrutizatoriai)'
+          : 'Installed and configured new hardware components such as printers, scanners, and routers',
         language === 'lt' 
-          ? 'Techninė pagalba klientams'
-          : 'Technical support to customers',
+          ? 'Sistemų stebėjimas, problemų identifikavimas ir greitas jų sprendimas'
+          : 'Monitored systems, identified issues, and resolved them in a timely manner',
         language === 'lt' 
-          ? 'Operacinių sistemų diegimas ir konfigūravimas'
-          : 'Operating system installation and configuration',
-        language === 'lt' 
-          ? 'Kompiuterių priežiūra ir aptarnavimas'
-          : 'Computer maintenance and service',
+          ? 'Operacinių sistemų, programų ir programinės įrangos diegimas, konfigūravimas ir priežiūra'
+          : 'Installed, configured, and maintained operating systems, applications, and software',
       ]
     },
-    // Add more experience entries as needed
   ];
 
   return (
@@ -48,8 +44,7 @@ const Experience = ({ language }) => {
               
               <div className="experience__content">
                 <h3 className="experience__title">{exp.title}</h3>
-                <div className="experience__company">{exp.company}</div>
-                <p className="experience__description">{exp.description}</p>
+                <div className="experience__company">{exp.company}, {exp.location}</div>
                 
                 <ul className="experience__responsibilities">
                   {exp.responsibilities.map((resp, idx) => (
@@ -69,8 +64,8 @@ const Experience = ({ language }) => {
           </h3>
           <p>
             {language === 'lt'
-              ? 'Esu pasiruošęs priimti naujus iššūkius ir tobulėti. Jei ieškote junior full-stack kūrėjo, kuris nori mokytis ir augti, susisiekite su manimi!'
-              : "I'm ready to take on new challenges and grow. If you're looking for a junior full-stack developer who is eager to learn and grow, please get in touch!"}
+              ? 'Esu pasiruošęs priimti naujus iššūkius ir tobulėti. Jei ieškote full-stack kūrėjo, kuris nori mokytis ir augti, susisiekite su manimi!'
+              : "I'm ready to take on new challenges and grow. If you're looking for a full-stack developer who is eager to learn and grow, please get in touch!"}
           </p>
         </div>
       </div>
