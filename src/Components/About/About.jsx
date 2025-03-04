@@ -2,18 +2,14 @@ import React from 'react';
 import { getText } from '../../Utils/i18n';
 import './About.scss';
 import profilePhoto from '../../Assets/Photo.png';
+// Import CV files directly
+import cvLt from '../../Assets/cv/rokas-raskevicius-cv-lt.pdf';
+import cvEn from '../../Assets/cv/rokas-raskevicius-cv-en.pdf';
 
 const About = ({ language }) => {
+  // Use imported CV files directly
+  const cvFile = language === 'lt' ? cvLt : cvEn;
   const cvFileName = language === 'lt' ? 'rokas-raskevicius-cv-lt.pdf' : 'rokas-raskevicius-cv-en.pdf';
-  
-  const getBasePath = () => {
-    if (process.env.PUBLIC_URL) {
-      return process.env.PUBLIC_URL;
-    }
-    
-    const pathSegments = window.location.pathname.split('/');
-    return pathSegments.length > 1 && pathSegments[1] !== '' ? `/${pathSegments[1]}` : '';
-  };
   
   return (
     <section id="about" className="about section">
@@ -139,11 +135,12 @@ const About = ({ language }) => {
                 {language === 'lt' ? 'Susisiekti' : 'Contact Me'}
               </a>
               <a 
-                href={`${getBasePath()}/assets/cv/${cvFileName}`}
+                href={cvFile}
                 className="btn btn-outline"
                 target="_blank" 
                 rel="noopener noreferrer"
-                download
+                download={cvFileName}
+                type="application/pdf"
               >
                 {getText(language, 'downloadCV')}
               </a>
