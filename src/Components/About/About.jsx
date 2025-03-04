@@ -3,8 +3,8 @@ import { getText } from '../../Utils/i18n';
 import './About.scss';
 import profilePhoto from '../../Assets/Photo.png';
 // Import CV files directly
-import cvLt from '../../Assets/cv/rokas-raskevicius-cv-lt.pdf';
-import cvEn from '../../Assets/cv/rokas-raskevicius-cv-en.pdf';
+import cvLt from '../../../public/Assets/cv/rokas-raskevicius-cv-lt.pdf';
+import cvEn from '../../../public/Assets/cv/rokas-raskevicius-cv-en.pdf';
 
 const About = ({ language }) => {
   // Use imported CV files directly
