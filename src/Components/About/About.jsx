@@ -2,14 +2,13 @@ import React from 'react';
 import { getText } from '../../Utils/i18n';
 import './About.scss';
 import profilePhoto from '../../Assets/Photo.png';
-// Import CV files directly
-import cvLt from '../../../public/Assets/cv/rokas-raskevicius-cv-lt.pdf';
-import cvEn from '../../../public/Assets/cv/rokas-raskevicius-cv-en.pdf';
+// Import CV files from Assets/cv folder
+import cvEN from '../../Assets/cv/rokas-raskevicius-cv-en.pdf';
+import cvLT from '../../Assets/cv/rokas-raskevicius-cv-lt.pdf';
 
 const About = ({ language }) => {
-  // Use imported CV files directly
-  const cvFile = language === 'lt' ? cvLt : cvEn;
-  const cvFileName = language === 'lt' ? 'rokas-raskevicius-cv-lt.pdf' : 'rokas-raskevicius-cv-en.pdf';
+  // Use the imported CV files instead of the hardcoded path
+  const cvFile = language === 'lt' ? cvLT : cvEN;
   
   return (
     <section id="about" className="about section">
@@ -135,12 +134,11 @@ const About = ({ language }) => {
                 {language === 'lt' ? 'Susisiekti' : 'Contact Me'}
               </a>
               <a 
-                href={cvFile}
+                href={cvFile} 
                 className="btn btn-outline"
                 target="_blank" 
                 rel="noopener noreferrer"
-                download={cvFileName}
-                type="application/pdf"
+                download
               >
                 {getText(language, 'downloadCV')}
               </a>
