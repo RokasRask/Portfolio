@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { getText } from '../../Utils/i18n';
 import './Contact.scss';
 
 const Contact = ({ language }) => {
+  const formRef = useRef();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -13,6 +14,7 @@ const Contact = ({ language }) => {
     submitted: false,
     error: false,
     message: '',
+    isSubmitting: false
   });
   
   const handleChange = (e) => {
@@ -23,7 +25,7 @@ const Contact = ({ language }) => {
     }));
   };
   
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     
     // Validate form
@@ -33,7 +35,8 @@ const Contact = ({ language }) => {
         error: true,
         message: language === 'lt' 
           ? 'Prašome užpildyti visus laukus.' 
-          : 'Please fill in all fields.'
+          : 'Please fill in all fields.',
+        isSubmitting: false
       });
       return;
     }
@@ -46,36 +49,73 @@ const Contact = ({ language }) => {
         error: true,
         message: language === 'lt' 
           ? 'Prašome įvesti teisingą el. pašto adresą.' 
-          : 'Please enter a valid email address.'
+          : 'Please enter a valid email address.',
+        isSubmitting: false
       });
       return;
     }
     
-    // Here you would normally send the form data to a server
-    // For now, we'll just simulate success
+    // Set loading state
     setFormStatus({
-      submitted: true,
+      submitted: false,
       error: false,
-      message: language === 'lt' 
-        ? 'Ačiū! Jūsų žinutė išsiųsta.' 
-        : 'Thank you! Your message has been sent.'
-    });
-    
-    // Reset form
-    setFormData({
-      name: '',
-      email: '',
       message: '',
+      isSubmitting: true
     });
-    
-    // Reset status after 5 seconds
-    setTimeout(() => {
+
+    try {
+      // Use FormSubmit for sending the form data
+      // You need to replace 'your-email@example.com' with your actual email
+      const formData = new FormData(formRef.current);
+      
+      const response = await fetch('https://formsubmit.co/rokas.raskevic@gmail.com', {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+      
+      if (response.ok) {
+        setFormStatus({
+          submitted: true,
+          error: false,
+          message: language === 'lt' 
+            ? 'Ačiū! Jūsų žinutė išsiųsta.' 
+            : 'Thank you! Your message has been sent.',
+          isSubmitting: false
+        });
+        
+        // Reset form
+        setFormData({
+          name: '',
+          email: '',
+          message: '',
+        });
+        
+        // Reset status after 5 seconds
+        setTimeout(() => {
+          setFormStatus({
+            submitted: false,
+            error: false,
+            message: '',
+            isSubmitting: false
+          });
+        }, 5000);
+      } else {
+        throw new Error('Form submission failed');
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
       setFormStatus({
         submitted: false,
-        error: false,
-        message: '',
+        error: true,
+        message: language === 'lt'
+          ? 'Klaida siunčiant žinutę. Prašome bandyti vėliau.'
+          : 'Error sending message. Please try again later.',
+        isSubmitting: false
       });
-    }, 5000);
+    }
   };
 
   return (
@@ -120,7 +160,7 @@ const Contact = ({ language }) => {
                   {language === 'lt' ? 'Miestas' : 'Location'}
                 </h3>
                 <p className="contact__info-text">
-                  Marijampolė, {language === 'lt' ? 'Lietuva' : 'Lithuania'}
+                  Vilnius, {language === 'lt' ? 'Lietuva' : 'Lithuania'}
                 </p>
               </div>
             </div>
@@ -146,6 +186,25 @@ const Contact = ({ language }) => {
               </div>
             </div>
             
+            <div className="contact__info-item">
+              <div className="contact__info-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                </svg>
+              </div>
+              <div className="contact__info-content">
+                <h3 className="contact__info-title">
+                  {language === 'lt' ? 'Telefonas' : 'Phone'}
+                </h3>
+                <a 
+                  href="tel:+37060185553" 
+                  className="contact__info-link"
+                >
+                  +370 601 85553
+                </a>
+              </div>
+            </div>
+            
             <div className="contact__availability">
               <h3>
                 {language === 'lt' ? 'Mano Statusas' : 'My Status'}
@@ -167,7 +226,19 @@ const Contact = ({ language }) => {
           </div>
           
           <div className="contact__form-container animate-on-scroll">
-            <form className="contact__form" onSubmit={handleSubmit}>
+            <form 
+              className="contact__form" 
+              onSubmit={handleSubmit} 
+              ref={formRef}
+              action="https://formsubmit.co/rokas.raskevic@gmail.com"
+              method="POST"
+            >
+              {/* FormSubmit reikalingi laukai */}
+              <input type="hidden" name="_subject" value={language === 'lt' ? 'Nauja žinutė iš jūsų portfolio' : 'New message from your portfolio'} />
+              <input type="hidden" name="_captcha" value="false" />
+              <input type="hidden" name="_next" value={window.location.href} />
+              <input type="text" name="_honey" style={{ display: 'none' }} />
+              
               <div className="contact__form-field">
                 <label htmlFor="name" className="contact__form-label">
                   {getText(language, 'formNameLabel')}
@@ -216,8 +287,14 @@ const Contact = ({ language }) => {
                 </div>
               )}
               
-              <button type="submit" className="contact__form-submit">
-                {getText(language, 'formSubmitButton')}
+              <button 
+                type="submit" 
+                className={`contact__form-submit ${formStatus.isSubmitting ? 'submitting' : ''}`}
+                disabled={formStatus.isSubmitting}
+              >
+                {formStatus.isSubmitting 
+                  ? (language === 'lt' ? 'Siunčiama...' : 'Sending...') 
+                  : getText(language, 'formSubmitButton')}
               </button>
             </form>
           </div>
