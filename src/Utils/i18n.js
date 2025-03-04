@@ -10,7 +10,7 @@ export const languages = {
     
     // About section
     aboutMe: "About Me",
-    aboutText: "Dynamic IT technician with two years of hands-on experience, excelling in technical support and system maintenance. Proficient in troubleshooting and resolving complex issues, demonstrating a strong ability to adapt to evolving technologies. Eager to leverage skills in web development to create innovative solutions as a Full Stack Web Developer. Committed to continuous learning and delivering high-quality results in fast-paced environments.",
+    aboutText: "Hello! I'm Rokas Raškevičius, a passionate developer learning HTML, CSS, JavaScript, and React. I love building projects and solving problems. I studied Information Technologies and Cybersecurity at Marijampolė College. While studying, I worked at a computer repair shop. I defended my diploma in the summer of 2024, and in the fall, I began delving deeper into full-stack web development. Currently, I am seeking a job in the field of web development.",
     downloadCV: "Download CV",
     
     // Skills section
@@ -61,7 +61,7 @@ export const languages = {
     
     // About section
     aboutMe: "Apie Mane",
-    aboutText: "Esu dinamiškas IT technikas su dvejų metų praktinės patirties, puikiai išmanantis techninę pagalbą ir sistemų priežiūrą. Gebu spręsti sudėtingas problemas ir greitai adaptuotis prie besikeičiančių technologijų. Siekiu panaudoti savo įgūdžius kurdamas inovatyvius sprendimus kaip Full Stack Web programuotojas. Nuolat mokausi ir esu įsipareigojęs teikti aukštos kokybės rezultatus greitai besikeičiančioje aplinkoje.",
+    aboutText: "Sveiki! Aš esu Rokas Raškevičius, entuziastingas programuotojas, besimokantis HTML, CSS, JavaScript ir React. Mėgstu kurti projektus ir spręsti problemas. Studijavau Marijampolės kolegijoje Informacines technologijas ir kibernetinę saugą, studijuodamas dirbau kompiuterių taisykloje. Diplomą apsigyniau 2024 m. vasarą, o rudenį pradėjau labiau gilintis į tinklalapių kūrimą fullstack. Šiuo metu ieškau darbo svetainių kūrimo srityje.",
     downloadCV: "Atsisiųsti CV",
     
     // Skills section
