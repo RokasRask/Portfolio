@@ -64,17 +64,21 @@ const Footer = ({ language }) => {
           <div className="footer__links">
             <div className="footer__quick-links">
               <h4 className="footer__heading">
-                {language === 'lt' ? 'Greitos Nuorodos' : 'Quick Links'}
+                {language === 'lt' ? 'Rekomendacijos' : 'Recommendations'}
               </h4>
-              <ul className="footer__links-list">
-                {quickLinks.map((link, index) => (
-                  <li key={index}>
-                    <a href={link.url} className="footer__link">
-                      {link.name}
-                    </a>
-                  </li>
-                ))}
-              </ul>
+              <p className="footer__recommendation">
+                {language === 'lt' 
+                  ? 'Turiu profesionalias rekomendacijas savo LinkedIn profilyje.'
+                  : 'I have professional recommendations on my LinkedIn profile.'}
+              </p>
+              <a 
+                href="https://www.linkedin.com/in/rokas-raškevicius-5b3414317/details/recommendations/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="footer__recommendation-link"
+              >
+                {language === 'lt' ? 'Peržiūrėti rekomendacijas' : 'View recommendations'}
+              </a>
             </div>
             
             <div className="footer__social-links">

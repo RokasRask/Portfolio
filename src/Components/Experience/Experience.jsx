@@ -69,7 +69,7 @@ const Experience = ({ language }) => {
           </h3>
           <p>
             {language === 'lt'
-              ? 'Esu pasiruošęs priimti naujus iššūkius ir tobulėti. Jei ieškote jaunesnio full-stack kūrėjo, kuris nori mokytis ir augti, susisiekite su manimi!'
+              ? 'Esu pasiruošęs priimti naujus iššūkius ir tobulėti. Jei ieškote junior full-stack kūrėjo, kuris nori mokytis ir augti, susisiekite su manimi!'
               : "I'm ready to take on new challenges and grow. If you're looking for a junior full-stack developer who is eager to learn and grow, please get in touch!"}
           </p>
         </div>

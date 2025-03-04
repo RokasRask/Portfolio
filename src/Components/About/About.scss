@@ -69,6 +69,12 @@
     display: flex;
     gap: $spacing-md;
     margin-top: $spacing-md;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+    @include respond-to(md) {
+      justify-content: flex-start;
+    }
   }
   
   &__social-link {
@@ -90,6 +96,76 @@
     &:hover {
       background: $secondary-color;
       transform: translateY(-3px);
+    }
+  }
+  
+  &__badge {
+    display: flex;
+    align-items: center;
+    background: linear-gradient(135deg, $primary-color, $accent-color);
+    color: $light-text;
+    padding: $spacing-xs $spacing-sm;
+    border-radius: $border-radius-md;
+    margin-top: $spacing-sm;
+    box-shadow: $shadow-sm;
+    font-size: $font-size-sm;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.2) 0%,
+        rgba(255, 255, 255, 0) 50%,
+        rgba(255, 255, 255, 0.2) 100%
+      );
+      z-index: 1;
+    }
+    
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: $shadow-md;
+    }
+  }
+  
+  &__badge-text {
+    display: flex;
+    align-items: center;
+    
+    &::before {
+      content: '✓';
+      margin-right: $spacing-xs;
+      font-weight: bold;
+    }
+  }
+  
+  &__detail-badge {
+    display: inline-flex;
+    align-items: center;
+    background: linear-gradient(135deg, $primary-color, $accent-color);
+    color: $light-text;
+    padding: $spacing-xs $spacing-sm;
+    border-radius: $border-radius-md;
+    margin-left: $spacing-sm;
+    font-size: $font-size-sm;
+    position: relative;
+    overflow: hidden;
+    
+    &::before {
+      content: '✓';
+      margin-right: $spacing-xs;
+      font-weight: bold;
+    }
+    
+    &:hover {
+      transform: translateY(-2px);
     }
   }
   
@@ -120,7 +196,7 @@
       flex-direction: row;
     }
     
-    @media (max-width: $breakpoint-sm - 1px) {
+    @media (max-width: #{$breakpoint-sm - 1px}) {
       flex-direction: column;
     }
   }
@@ -134,6 +210,10 @@
   
   &__detail-value {
     color: $text-color;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: $spacing-xs;
     
     a {
       color: $primary-color;
@@ -152,7 +232,7 @@
     gap: $spacing-md;
     margin-top: $spacing-lg;
     
-    @media (max-width: $breakpoint-sm - 1px) {
+    @media (max-width: #{$breakpoint-sm - 1px}) {
       flex-direction: column;
       width: 100%;
     }
@@ -169,7 +249,7 @@
   text-align: center;
   cursor: pointer;
   
-  @media (max-width: $breakpoint-sm - 1px) {
+  @media (max-width: #{$breakpoint-sm - 1px}) {
     width: 100%;
   }
   

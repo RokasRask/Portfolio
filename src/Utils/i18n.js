@@ -74,7 +74,7 @@ export const languages = {
     jobTitle: "Kompiuterių technikas",
     jobPeriod: "2021 - 2024",
     jobCompany: "Kompiuterių taisykla",
-    jobDescription: "Diagnostikavau ir taisiau aparatinės ir programinės įrangos problemas. Teikiau techninę pagalbą ir klientų aptarnavimą.",
+    jobDescription: "Atlikau diagnostiką ir taisiau aparatinės ir programinės įrangos problemas. Teikiau techninę pagalbą ir klientų aptarnavimą.",
     
     // Education section
     educationTitle: "Išsilavinimas",

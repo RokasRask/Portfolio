@@ -35,6 +35,17 @@ const About = ({ language }) => {
                 </svg>
               </a>
               <a 
+                href="https://www.linkedin.com/in/rokas-raškevicius-5b3414317/details/recommendations/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="about__badge"
+                title={language === 'lt' ? 'Peržiūrėti rekomendacijas' : 'View recommendations'}
+              >
+                <span className="about__badge-text">
+                  {language === 'lt' ? 'Rekomenduojamas' : 'Recommended'}
+                </span>
+              </a>
+              <a 
                 href="https://github.com/rokasrask" 
                 target="_blank" 
                 rel="noopener noreferrer"
@@ -45,7 +56,6 @@ const About = ({ language }) => {
                   <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
                 </svg>
               </a>
-              {/* Add more social links as needed */}
             </div>
           </div>
           
@@ -56,12 +66,6 @@ const About = ({ language }) => {
             
             <div className="about__details">
               <div className="about__detail-item">
-                <span className="about__detail-label">
-                  {language === 'lt' ? 'Adresas:' : 'Location:'}
-                </span>
-                <span className="about__detail-value">
-                  {language === 'lt' ? 'Marijampolė, Lietuva' : 'Marijampolė, Lithuania'}
-                </span>
               </div>
               
               <div className="about__detail-item">
@@ -84,14 +88,34 @@ const About = ({ language }) => {
                 </span>
               </div>
               
-              {/* Add more details here like phone number, availability, etc. */}
+              <div className="about__detail-item">
+                <span className="about__detail-label">
+                  {language === 'lt' ? 'LinkedIn:' : 'LinkedIn:'}
+                </span>
+                <span className="about__detail-value">
+                  <a 
+                    href="https://www.linkedin.com/in/rokas-raškevicius-5b3414317/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                  >
+                    Rokas Raškevičius
+                  </a>
+                  
+                </span>
+              </div>
             </div>
             
             <div className="about__buttons">
               <a href="#contact" className="btn btn-primary">
                 {language === 'lt' ? 'Susisiekti' : 'Contact Me'}
               </a>
-              <a href="#" className="btn btn-outline">
+              <a 
+                href="/assets/cv/rokas-raskevicius-cv.pdf" 
+                className="btn btn-outline"
+                target="_blank" 
+                rel="noopener noreferrer"
+                download
+              >
                 {getText(language, 'downloadCV')}
               </a>
             </div>

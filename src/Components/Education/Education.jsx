@@ -10,6 +10,7 @@ const Education = ({ language }) => {
       institution: getText(language, 'educationInstitution'),
       period: getText(language, 'educationPeriod'),
       description: getText(language, 'educationDescription'),
+      diplomaLink: "/assets/diploma/rokas-raskevicius-diploma.pdf",
       skills: [
         language === 'lt' ? 'Programavimas' : 'Programming',
         language === 'lt' ? 'Duomenų bazių valdymas' : 'Database Management',
@@ -24,23 +25,12 @@ const Education = ({ language }) => {
   // Add courses and certificates
   const certificates = [
     {
-      title: 'Front-End Web Development',
-      organization: 'Udemy',
-      year: '2024',
-      link: '#'
-    },
-    {
-      title: 'React - The Complete Guide',
-      organization: 'Udemy',
-      year: '2024',
-      link: '#'
-    },
-    {
-      title: 'Responsive Web Design',
-      organization: 'freeCodeCamp',
-      year: '2023',
-      link: '#'
-    },
+      title: 'Web Development Course',
+      organization: 'Baltic Institute of Technology (BIT)',
+      year: '2024-2025',
+      period: '2024-09-30 — 2025-03-07',
+      link: 'https://bit.lt'
+    }
     // Add more certificates as needed
   ];
 
@@ -66,6 +56,8 @@ const Education = ({ language }) => {
                 
                 <div className="education__institution">{edu.institution}</div>
                 <p className="education__description">{edu.description}</p>
+                
+                
                 
                 <div className="education__skills">
                   <h5 className="education__skills-title">
@@ -94,8 +86,13 @@ const Education = ({ language }) => {
                     <span className="education__certificate-org">{cert.organization}</span>
                     <span className="education__certificate-year">{cert.year}</span>
                   </div>
+                  {cert.period && (
+                    <div className="education__certificate-period">
+                      {cert.period}
+                    </div>
+                  )}
                   <a href={cert.link} className="education__certificate-link" target="_blank" rel="noopener noreferrer">
-                    {language === 'lt' ? 'Peržiūrėti sertifikatą' : 'View Certificate'}
+                    {language === 'lt' ? 'Peržiūrėti' : 'View'}
                   </a>
                 </div>
               ))}

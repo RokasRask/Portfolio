@@ -124,6 +124,27 @@
     }
   }
   
+  &__recommendation {
+    color: rgba($light-text, 0.8);
+    margin-bottom: $spacing-sm;
+    line-height: 1.5;
+  }
+  
+  &__recommendation-link {
+    display: inline-block;
+    background: rgba($accent-color, 0.2);
+    color: $light-text;
+    padding: $spacing-xs $spacing-sm;
+    border-radius: $border-radius-sm;
+    font-size: $font-size-sm;
+    transition: all $transition-base;
+    
+    &:hover {
+      background: $accent-color;
+      transform: translateY(-2px);
+    }
+  }
+  
   &__bottom {
     border-top: 1px solid rgba($light-text, 0.1);
     padding: $spacing-md 0;
