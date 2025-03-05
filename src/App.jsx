@@ -56,9 +56,9 @@ function App() {
       <main>
         <About language={language} />
         <Skills language={language} />
+        <Projects language={language} />
         <Experience language={language} />
         <Education language={language} />
-        <Projects language={language} />
         <Contact language={language} />
       </main>
       <Footer language={language} />

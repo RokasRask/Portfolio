@@ -3,24 +3,24 @@ import { getText } from '../../Utils/i18n';
 import './Skills.scss';
 
 const Skills = ({ language }) => {
-  // Define skills with proficiency percentages from CV
+  // Define skills without percentages
   const technicalSkills = [
-    { name: 'HTML5', level: 100 },
-    { name: 'JavaScript', level: 80 },
-    { name: 'HTML & CSS', level: 90 },
-    { name: 'React', level: 80 },
-    { name: 'Git', level: 95 },
-    { name: 'Node.js', level: 100 },
-    { name: 'SQL', level: 70 },
-    { name: 'MySQL', level: 70 },
+    'HTML5',
+    'JavaScript',
+    'HTML & CSS',
+    'React',
+    'Git',
+    'Node.js',
+    'SQL',
+    'MySQL',
   ];
 
   const softSkills = [
-    { name: language === 'lt' ? 'Problemų sprendimas' : 'Problem Solving', level: 90 },
-    { name: language === 'lt' ? 'Komandinis darbas' : 'Teamwork', level: 85 },
-    { name: language === 'lt' ? 'Techninė pagalba' : 'Technical Support', level: 95 },
-    { name: language === 'lt' ? 'Adaptabilumas' : 'Adaptability', level: 90 },
-    { name: language === 'lt' ? 'Komunikacija' : 'Communication', level: 85 },
+    language === 'lt' ? 'Problemų sprendimas' : 'Problem Solving',
+    language === 'lt' ? 'Komandinis darbas' : 'Teamwork',
+    language === 'lt' ? 'Techninė pagalba' : 'Technical Support',
+    language === 'lt' ? 'Adaptabilumas' : 'Adaptability',
+    language === 'lt' ? 'Komunikacija' : 'Communication',
   ];
 
   // Tools and technologies I'm familiar with
@@ -52,19 +52,14 @@ const Skills = ({ language }) => {
               {language === 'lt' ? 'Techniniai įgūdžiai' : 'Technical Skills'}
             </h3>
             
-            <div className="skills__list">
+            <div className="skills__fancy-list">
               {technicalSkills.map((skill, index) => (
-                <div className="skill-item" key={index}>
-                  <div className="skill-item__header">
-                    <span className="skill-item__name">{skill.name}</span>
-                    <span className="skill-item__percentage">{skill.level}%</span>
+                <div className="skill-item-fancy" key={index}>
+                  <div className="skill-item-fancy__icon">
+                    <span className="skill-item-fancy__icon-inner"></span>
                   </div>
-                  <div className="skill-item__bar">
-                    <div 
-                      className="skill-item__progress" 
-                      style={{ width: `${skill.level}%` }}
-                      data-level={skill.level}
-                    ></div>
+                  <div className="skill-item-fancy__content">
+                    <span className="skill-item-fancy__name">{skill}</span>
                   </div>
                 </div>
               ))}
@@ -76,19 +71,14 @@ const Skills = ({ language }) => {
               {language === 'lt' ? 'Asmeniniai įgūdžiai' : 'Soft Skills'}
             </h3>
             
-            <div className="skills__list">
+            <div className="skills__fancy-list">
               {softSkills.map((skill, index) => (
-                <div className="skill-item" key={index}>
-                  <div className="skill-item__header">
-                    <span className="skill-item__name">{skill.name}</span>
-                    <span className="skill-item__percentage">{skill.level}%</span>
+                <div className="skill-item-fancy skill-item-fancy--soft" key={index}>
+                  <div className="skill-item-fancy__icon">
+                    <span className="skill-item-fancy__icon-inner"></span>
                   </div>
-                  <div className="skill-item__bar">
-                    <div 
-                      className="skill-item__progress skill-item__progress--soft" 
-                      style={{ width: `${skill.level}%` }}
-                      data-level={skill.level}
-                    ></div>
+                  <div className="skill-item-fancy__content">
+                    <span className="skill-item-fancy__name">{skill}</span>
                   </div>
                 </div>
               ))}
@@ -103,8 +93,8 @@ const Skills = ({ language }) => {
           
           <div className="skills__tools-grid">
             {tools.map((tool, index) => (
-              <div className="skills__tool-item" key={index}>
-                {tool}
+              <div className="skills__tool-fancy" key={index}>
+                <span className="skills__tool-text">{tool}</span>
               </div>
             ))}
           </div>

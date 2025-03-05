@@ -8,6 +8,7 @@ import project2Image from '../../Assets/valid.PNG';
 import project3Image from '../../Assets/green.PNG';
 import project4Image from '../../Assets/farm.PNG';
 import project5Image from '../../Assets/kolt.PNG';
+import project6Image from '../../Assets/tic-tac-toe.PNG';
 import placeholderImage from '../../Assets/placeholder.jpg';
 
 const Projects = ({ language }) => {
@@ -69,6 +70,17 @@ const Projects = ({ language }) => {
       image: project5Image,
       category: 'crud',
       technologies: ['HTML', 'CSS', 'JavaScript', 'CRUD Operations']
+    },
+    {
+      title: language === 'lt' ? 'Tic-Tac-Toe' : 'Tic-Tac-Toe',
+      description: language === 'lt' 
+        ? 'Žaidimas "Tic-Tac-Toe" sukurtas naudojant JavaScript' 
+        : '"Tic_Tac-Toe game created using JavaScript"',
+      link: "https://rokasrask.github.io/tic-tac-toe/",
+      github: "https://github.com/rokasrask/tic-tac-toe",
+      image: project6Image,
+      category: 'crud',
+      technologies: ['HTML', 'CSS', 'JavaScript']
     },
   ];
 
