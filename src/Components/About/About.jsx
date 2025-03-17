@@ -27,7 +27,7 @@ const About = ({ language }) => {
             </div>
             <div className="about__social">
               <a 
-                href="www.linkedin.com/in/rokas-raškevičius-5b3414317" 
+                href="https://www.linkedin.com/in/rokas-raškevičius-5b3414317/?trk=public-profile-join-page" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="about__social-link"
@@ -40,7 +40,7 @@ const About = ({ language }) => {
                 </svg>
               </a>
               <a 
-                href="https://www.linkedin.com/in/rokas-raškevicius-5b3414317/details/recommendations/" 
+                href="https://www.linkedin.com/in/rokas-raškevičius-5b3414317/details/recommendations/" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="about__badge"
