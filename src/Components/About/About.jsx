@@ -27,7 +27,7 @@ const About = ({ language }) => {
             </div>
             <div className="about__social">
               <a 
-                href="https://www.linkedin.com/in/rokas-raškevicius-5b3414317/" 
+                href="www.linkedin.com/in/rokas-raškevičius-5b3414317" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="about__social-link"
