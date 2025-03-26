@@ -72,7 +72,7 @@ const Footer = ({ language }) => {
                   : 'I have professional recommendations on my LinkedIn profile.'}
               </p>
               <a 
-                href="https://www.linkedin.com/in/rokas-raškevicius-5b3414317/details/recommendations/" 
+                href="https://www.linkedin.com/in/rokas-raskevicius/details/recommendations/" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="footer__recommendation-link"
