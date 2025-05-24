@@ -1,0 +1,276 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.contact {
+  background-color: $light-bg;
+  position: relative;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+      radial-gradient(circle at 90% 10%, rgba($primary-color, 0.05) 0%, transparent 300px),
+      radial-gradient(circle at 10% 90%, rgba($accent-color, 0.05) 0%, transparent 300px);
+    pointer-events: none;
+  }
+  
+  &__intro {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto $spacing-xl;
+    font-size: $font-size-lg;
+  }
+  
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $spacing-xl;
+    
+    @include respond-to(lg) {
+      grid-template-columns: 1fr 1.5fr;
+    }
+  }
+  
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-lg;
+  }
+  
+  &__info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: $spacing-md;
+    background: white;
+    padding: $spacing-lg;
+    border-radius: $border-radius-md;
+    box-shadow: $shadow-sm;
+    transition: all $transition-base;
+    
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: $shadow-md;
+      
+      .contact__info-icon {
+        background: $primary-color;
+        color: $light-text;
+      }
+    }
+  }
+  
+  &__info-icon {
+    background: rgba($primary-color, 0.1);
+    color: $primary-color;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all $transition-base;
+    flex-shrink: 0;
+  }
+  
+  &__info-content {
+    flex-grow: 1;
+  }
+  
+  &__info-title {
+    font-weight: 600;
+    margin-bottom: $spacing-xs;
+    color: $secondary-color;
+  }
+  
+  &__info-link {
+    color: $primary-color;
+    transition: all $transition-base;
+    
+    &:hover {
+      color: $secondary-color;
+      text-decoration: underline;
+    }
+  }
+  
+  &__info-text {
+    color: $text-color;
+    line-height: 1.5;
+  }
+  
+  &__availability {
+    background: linear-gradient(135deg, rgba($primary-color, 0.05), rgba($accent-color, 0.05));
+    padding: $spacing-lg;
+    border-radius: $border-radius-md;
+    border-left: 4px solid $accent-color;
+    
+    h3 {
+      color: $secondary-color;
+      margin-bottom: $spacing-md;
+    }
+  }
+  
+  &__availability-status {
+    display: flex;
+    align-items: center;
+    gap: $spacing-sm;
+    margin-bottom: $spacing-sm;
+  }
+  
+  &__availability-indicator {
+    width: 12px;
+    height: 12px;
+    background: $success-color;
+    border-radius: 50%;
+    display: block;
+    position: relative;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      top: -4px;
+      left: -4px;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: rgba($success-color, 0.3);
+      animation: pulse 2s ease-in-out infinite;
+    }
+  }
+  
+  &__availability-text {
+    font-weight: 600;
+    color: $success-color;
+  }
+  
+  &__availability-note {
+    line-height: 1.6;
+  }
+  
+  &__form-container {
+    background: white;
+    padding: $spacing-xl;
+    border-radius: $border-radius-md;
+    box-shadow: $shadow-md;
+  }
+  
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-md;
+  }
+  
+  &__form-field {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-xs;
+  }
+  
+  &__form-label {
+    font-weight: 500;
+    color: $secondary-color;
+  }
+  
+  &__form-input,
+  &__form-textarea {
+    padding: $spacing-md;
+    border: 1px solid $border-color;
+    border-radius: $border-radius-sm;
+    transition: all $transition-base;
+    
+    &:focus {
+      outline: none;
+      border-color: $primary-color;
+      box-shadow: 0 0 0 2px rgba($primary-color, 0.2);
+    }
+  }
+  
+  &__form-textarea {
+    resize: vertical;
+    min-height: 120px;
+  }
+  
+  &__form-message {
+    padding: $spacing-md;
+    border-radius: $border-radius-sm;
+    font-weight: 500;
+    
+    &.success {
+      background: rgba($success-color, 0.1);
+      color: $success-color;
+      border-left: 3px solid $success-color;
+    }
+    
+    &.error {
+      background: rgba($error-color, 0.1);
+      color: $error-color;
+      border-left: 3px solid $error-color;
+    }
+  }
+  
+  &__form-submit {
+    padding: $spacing-md $spacing-lg;
+    background: $primary-color;
+    color: $light-text;
+    border: none;
+    border-radius: $border-radius-sm;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all $transition-base;
+    margin-top: $spacing-sm;
+    position: relative;
+    overflow: hidden;
+    
+    &:hover {
+      background: $secondary-color;
+      transform: translateY(-3px);
+      box-shadow: $shadow-md;
+    }
+    
+    &:active {
+      transform: translateY(0);
+    }
+    
+    &.submitting {
+      background: $secondary-color;
+      pointer-events: none;
+      
+      &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 30%;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.2);
+        animation: loading 1.5s infinite;
+      }
+    }
+  }
+}
+
+@keyframes loading {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(400%);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.3;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+}

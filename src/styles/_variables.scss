@@ -1,0 +1,60 @@
+// Color Palette
+$primary-color: #4b6cb7;
+$secondary-color: #182848;
+$accent-color: #64b5f6;
+$text-color: #333;
+$light-text: #fff;
+$light-bg: #f8f9fa;
+$dark-bg: #212529;
+$border-color: #e0e0e0;
+$success-color: #28a745;
+$error-color: #dc3545;
+
+// Typography
+$font-family-main: 'Roboto', sans-serif;
+$font-family-heading: 'Poppins', sans-serif;
+$font-size-base: 16px;
+$font-size-sm: 0.875rem;
+$font-size-lg: 1.25rem;
+$font-size-xl: 1.5rem;
+$font-size-xxl: 2rem;
+$font-size-huge: 3rem;
+$line-height-base: 1.5;
+
+// Spacing
+$spacing-xs: 0.25rem;
+$spacing-sm: 0.5rem;
+$spacing-md: 1rem;
+$spacing-lg: 1.5rem;
+$spacing-xl: 3rem;
+$spacing-xxl: 5rem;
+
+// Breakpoints
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+
+// Border radius
+$border-radius-sm: 0.25rem;
+$border-radius-md: 0.5rem;
+$border-radius-lg: 1rem;
+$border-radius-circle: 50%;
+
+// Shadows
+$shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+$shadow-md: 0 4px 8px rgba(0, 0, 0, 0.1);
+$shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.1);
+
+// Z-index
+$z-index-header: 1000;
+$z-index-modal: 2000;
+$z-index-tooltip: 3000;
+
+// Transitions
+$transition-fast: 0.2s ease;
+$transition-base: 0.3s ease;
+$transition-slow: 0.5s ease;
+
+// Container widths
+$container-max-width: 1200px;

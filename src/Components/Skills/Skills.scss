@@ -1,0 +1,214 @@
+.skills {
+  padding: 5rem 0;
+  background-color: #f9f9f9;
+
+  &__intro {
+    max-width: 800px;
+    margin: 0 auto 3rem;
+    text-align: center;
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+
+  &__content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 4rem;
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__column {
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+    }
+  }
+
+  &__subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: #333;
+    position: relative;
+    padding-bottom: 0.5rem;
+
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 60px;
+      height: 3px;
+      background: linear-gradient(to right, #6a11cb, #2575fc);
+    }
+  }
+
+  &__fancy-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+
+  &__tools {
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+  }
+
+  &__tools-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+  }
+
+  &__tool-fancy {
+    position: relative;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 1rem;
+    border-radius: 8px;
+    background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.4) 100%);
+    border: 1px solid rgba(72, 151, 251, 0.2);
+    backdrop-filter: blur(5px);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+    overflow: hidden;
+    transition: all 0.3s ease;
+    
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(45deg, transparent 0%, rgba(106, 17, 203, 0.1) 100%);
+      z-index: 1;
+      transform: translateX(-100%);
+      transition: transform 0.6s ease;
+    }
+    
+    &:hover {
+      transform: translateY(-5px);
+      border-color: rgba(106, 17, 203, 0.4);
+      
+      &:before {
+        transform: translateX(0);
+      }
+    }
+  }
+  
+  &__tool-text {
+    position: relative;
+    z-index: 2;
+    font-weight: 500;
+    color: #333;
+    font-size: 0.9rem;
+    text-align: center;
+  }
+}
+
+.skill-item-fancy {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 0.8rem 1rem;
+  border-radius: 10px;
+  background: linear-gradient(to right, #f9f9f9, #ffffff);
+  transition: all 0.3s ease;
+  overflow: hidden;
+  
+  &:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 3px;
+    background: linear-gradient(to bottom, #6a11cb, #2575fc);
+    transition: width 0.3s ease;
+  }
+  
+  &:hover {
+    transform: translateX(5px);
+    box-shadow: 0 5px 15px rgba(37, 117, 252, 0.1);
+    
+    &:before {
+      width: 6px;
+    }
+    
+    .skill-item-fancy__icon-inner {
+      transform: rotate(45deg);
+    }
+  }
+  
+  &--soft {
+    &:before {
+      background: linear-gradient(to bottom, #11998e, #38ef7d);
+    }
+    
+    .skill-item-fancy__icon {
+      background: linear-gradient(45deg, #11998e20, #38ef7d20);
+      border-color: #11998e40;
+    }
+  }
+  
+  &__icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    background: linear-gradient(45deg, #6a11cb20, #2575fc20);
+    border: 1px solid rgba(106, 17, 203, 0.4);
+    
+    &-inner {
+      width: 8px;
+      height: 8px;
+      background: linear-gradient(45deg, #6a11cb, #2575fc);
+      border-radius: 2px;
+      transition: transform 0.3s ease;
+    }
+  }
+  
+  &--soft {
+    .skill-item-fancy__icon-inner {
+      background: linear-gradient(45deg, #11998e, #38ef7d);
+    }
+  }
+  
+  &__content {
+    flex: 1;
+  }
+  
+  &__name {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #333;
+    display: block;
+  }
+}
+
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  
+  &.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
