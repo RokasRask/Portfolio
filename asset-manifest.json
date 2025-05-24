@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/Portfolio/static/css/main.36d892b6.css",
+    "main.js": "/Portfolio/static/js/main.ea148922.js",
+    "static/media/green.PNG": "/Portfolio/static/media/green.8fbb6afb6c6f0588eeff.PNG",
+    "static/media/Photo.png": "/Portfolio/static/media/Photo.bd74191f0993d43d0cca.png",
+    "static/media/tic-tac-toe.PNG": "/Portfolio/static/media/tic-tac-toe.fd5e481daf367307f2b8.PNG",
+    "static/media/kolt.PNG": "/Portfolio/static/media/kolt.d23be4f8dbb9e8fc2003.PNG",
+    "static/media/farm.PNG": "/Portfolio/static/media/farm.140f6d4dae691b772673.PNG",
+    "static/media/Sask.PNG": "/Portfolio/static/media/Sask.aa5e30918e939aa14b0a.PNG",
+    "static/media/rokas-raskevicius-cv-lt.pdf": "/Portfolio/static/media/rokas-raskevicius-cv-lt.92ff0f3fc8ccee81ea0c.pdf",
+    "static/media/rokas-raskevicius-cv-en.pdf": "/Portfolio/static/media/rokas-raskevicius-cv-en.9369b1d26279fa86cddd.pdf",
+    "static/media/valid.PNG": "/Portfolio/static/media/valid.207893790513b3987638.PNG",
+    "static/media/placeholder.jpg": "/Portfolio/static/media/placeholder.e83e00e04a871eaf1317.jpg",
+    "index.html": "/Portfolio/index.html",
+    "main.36d892b6.css.map": "/Portfolio/static/css/main.36d892b6.css.map",
+    "main.ea148922.js.map": "/Portfolio/static/js/main.ea148922.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.36d892b6.css",
+    "static/js/main.ea148922.js"
+  ]
+}
